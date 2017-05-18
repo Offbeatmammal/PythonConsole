@@ -49,4 +49,4 @@ class AzureAuthClient(object):
             self.token = response.content
             self.reuse_token_until = datetime.utcnow() + timedelta(minutes=5)
 
-        return self.token
+        return self.token.decode("utf-8")
